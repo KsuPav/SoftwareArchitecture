@@ -33,10 +33,10 @@ Rel(user, web_site, "Регистрация, получение списка у�
 Rel(web_site, client_service, "Работа с пользователями", "localhost/person")
 Rel(client_service, db, "INSERT/SELECT/UPDATE", "SQL")
 
-Rel(web_site, catalog_service, "Работа с услугами", "localhost/pres")
+Rel(web_site, catalog_service, "Работа с услугами", "localhost/catalog")
 Rel(catalog_service, db, "INSERT/SELECT/UPDATE", "SQL")
 
-Rel(web_site, order_service, "Работа с заказами", "localhost/conf")
+Rel(web_site, order_service, "Работа с заказами", "localhost/order")
 Rel(order_service, db, "INSERT/SELECT/UPDATE", "SQL")
 
 @enduml
