@@ -6,10 +6,10 @@
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 
 Person(admin, "Администратор")
-Person(moderator, "Модератор")
+Person(techsup, "Техническая поддержка")
 Person(user, "Пользователь")
 
-System(conference_site, "Сайт блогов", "Веб-сайт для работы с блогами")
+System(service_order, "Сайт заказа услуг", "Веб-сайт для заказа услуг")
 
 
 
