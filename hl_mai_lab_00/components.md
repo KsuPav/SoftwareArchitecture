@@ -12,12 +12,12 @@ AddElementTag("microService", $shape=EightSidedShape(), $bgColor="CornflowerBlue
 AddElementTag("storage", $shape=RoundedBoxShape(), $bgColor="lightSkyBlue", $fontColor="white")
 
 Person(admin, "Администратор")
-Person(moderator, "Модератор")
+Person(operator, "Оператор")
 Person(user, "Пользователь")
 
 System_Ext(web_site, "Клиентский веб-сайт", "HTML, CSS, JavaScript, React", "Веб-интерфейс")
 
-System_Boundary(conference_site, "Сайт блогов") {
+System_Boundary(service_order, "Сайт заказа услуг") {
    'Container(web_site, "Клиентский веб-сайт", ")
    Container(client_service, "Сервис авторизации", "C++", "Сервис управления пользователями", $tags = "microService")    
    Container(post_service, "Сервис постов", "C++", "Сервис управления блогами", $tags = "microService") 
@@ -26,9 +26,9 @@ System_Boundary(conference_site, "Сайт блогов") {
    
 }
 
-Rel(admin, web_site, "Просмотр, добавление и редактирование информации о пользователях, конференциях и докладах")
-Rel(moderator, web_site, "Модерация контента и пользователей")
-Rel(user, web_site, "Регистрация, просмотр информации о конференциях и докладах и запись на них")
+Rel(admin, service_order, "Просмотр, добавление и редактирование информации о пользователях и услугах")
+Rel(operator, service_order, "Консультирование пользователей, оформление заказов, просмотр информации о пользователях и услугах")
+Rel(user, service_order, "Регистрация, получение списка услуг, добавление услуг в заказ")
 
 Rel(web_site, client_service, "Работа с пользователями", "localhost/person")
 Rel(client_service, db, "INSERT/SELECT/UPDATE", "SQL")
