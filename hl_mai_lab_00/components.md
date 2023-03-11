@@ -20,9 +20,9 @@ System_Ext(web_site, "Клиентский веб-сайт", "HTML, CSS, JavaScr
 System_Boundary(service_order, "Сайт заказа услуг") {
    'Container(web_site, "Клиентский веб-сайт", ")
    Container(client_service, "Сервис авторизации", "C++", "Сервис управления пользователями", $tags = "microService")    
-   Container(post_service, "Сервис постов", "C++", "Сервис управления блогами", $tags = "microService") 
-   Container(blog_service, "Сервис блогов", "C++", "Сервис управления постами", $tags = "microService")   
-   ContainerDb(db, "База данных", "MySQL", "Хранение данных о блогах, постах и пользователях", $tags = "storage")
+   Container(catalog_service, "Сервис каталога услуг", "C++", "Сервис управления услугами", $tags = "microService") 
+   Container(order_service, "Сервис заказов", "C++", "Сервис управления заказами", $tags = "microService")   
+   ContainerDb(db, "База данных", "MySQL", "Хранение данных о пользователях, услугах и заказах", $tags = "storage")
    
 }
 
@@ -33,11 +33,11 @@ Rel(user, service_order, "Регистрация, получение списк�
 Rel(web_site, client_service, "Работа с пользователями", "localhost/person")
 Rel(client_service, db, "INSERT/SELECT/UPDATE", "SQL")
 
-Rel(web_site, post_service, "Работа с постами", "localhost/pres")
-Rel(post_service, db, "INSERT/SELECT/UPDATE", "SQL")
+Rel(web_site, catalog_service, "Работа с услугами", "localhost/pres")
+Rel(catalog_service, db, "INSERT/SELECT/UPDATE", "SQL")
 
-Rel(web_site, blog_service, "Работа с блогами", "localhost/conf")
-Rel(blog_service, db, "INSERT/SELECT/UPDATE", "SQL")
+Rel(web_site, order_service, "Работа с заказами", "localhost/conf")
+Rel(order_service, db, "INSERT/SELECT/UPDATE", "SQL")
 
 @enduml
 ```
