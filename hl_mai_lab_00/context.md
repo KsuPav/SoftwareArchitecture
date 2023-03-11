@@ -6,16 +6,16 @@
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 
 Person(admin, "Администратор")
-Person(techsup, "Техническая поддержка")
+Person(operator, "Оператор")
 Person(user, "Пользователь")
 
 System(service_order, "Сайт заказа услуг", "Веб-сайт для заказа услуг")
 
 
 
-Rel(admin, conference_site, "Просмотр, добавление и редактирование информации о пользователях, блогах и публикациях")
-Rel(moderator, conference_site, "Модерация контента и пользователей")
-Rel(user, conference_site, "Регистрация, просмотр/изменение информации о блогах и публикациях")
+Rel(admin, conference_site, "Просмотр, добавление и редактирование информации о пользователях и услугах")
+Rel(operator, conference_site, "Консультирование пользователей, оформление заказов, просмотр информации о пользователях и услугах")
+Rel(user, conference_site, "Регистрация, получение списка услуг, добавление услуг в заказ")
 
 
 
